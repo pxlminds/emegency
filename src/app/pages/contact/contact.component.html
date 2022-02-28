@@ -1,0 +1,49 @@
+<main-header></main-header>
+<div class="container signupinpages">
+	<div class="row">
+		<div class="col-md-6 singupleft">
+			<h2>Intelligent device tracking app for<br/> Loved ones.</h2>
+			<img src="{{IMG_PREFIX}}contact.png" alt="Sign in">
+		</div>
+		<div class="col-md-6">
+			<div class="container contactform" > 
+			 <form [formGroup]="contactform" (ngSubmit)="onSubmit()" novalidate>
+			 	<div class="row">
+			 		<div class="col-md-12">
+						<input id="first-name" type="text" required formControlName="name"  placeholder="Name">
+						<p class="error" *ngIf="contactform.touched && contactform.controls['name'].invalid"> 
+					      {{ getError('name', 'name') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+					    <input type="email" formControlName="email" id="email" required placeholder="Email" />
+					    <p class="error" *ngIf="contactform.touched && contactform.controls['email'].invalid"> 
+					      {{ getError('email', 'email') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">						
+			 			<input id="mobile" type="tel" formControlName="mobile" required placeholder="Mobile">
+			 			<p class="error" *ngIf="contactform.touched && contactform.controls['mobile'].invalid"> 
+					      {{ getError('mobile', 'mobile') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+						<textarea id="message" type="text" formControlName="message" placeholder="Message" required></textarea> 
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+				 		  <button type="submit" [disabled]="!contactform.valid">Submit</button>
+					</div>
+			 	</div>			  
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

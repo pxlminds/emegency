@@ -1,0 +1,70 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$website-primary: mat.define-palette(mat.$indigo-palette);
+$website-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$website-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$website-theme: mat.define-light-theme((
+  color: (
+    primary: $website-primary,
+    accent: $website-accent,
+    warn: $website-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($website-theme);
+
+/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$black-color: #000000;
+*{font-family:Roboto;}
+.container-xl, .container-lg, .container-md, .container-sm, .container{max-width: 1280px;}
+body{
+	margin:0;
+	padding:0;
+}
+
+
+.signupinpages{
+	padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.contactForm{width: 100%;
+  h2{font-size: 32px;color:$black-color;}
+  .mat-form-field{width: 100%;
+    textarea{min-height: 150px;}
+    .mat-form-field-flex{border:1px solid #ddd;border-radius: 5px;background: #fff;overflow: hidden;}
+  }
+  .mat-form-field-appearance-fill .mat-form-field-underline::before{background: none}
+  .mat-form-field-ripple{background: #F2191A}
+  .mat-focused{
+     .mat-form-field-label{color:#F2191A}
+ .mat-form-field-ripple{background: #F2191A}
+ }
+
+}
+

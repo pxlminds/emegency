@@ -1,0 +1,25 @@
+.contactform{	
+	.col-md-12{
+		margin-bottom: 25px;
+		input[type="text"],input[type="email"],input[type="tel"], textarea{
+		background: #fff;
+		width: 100%;
+		border:1px solid #ddd;
+		border-radius: 3px;
+		min-height: 54px;
+		padding: 0 10px;
+		}
+		textarea{
+			min-height: 120px
+		}
+		button{
+			background: #F2191A;padding: 0 50px;line-height: 50px;color:#fff;display: inline-block;width:100%;border:none;border-radius: 3px;cursor: pointer;
+			&:hover{
+				text-decoration: none;
+				background: #9b1718;
+			}
+			&:disabled{opacity: 0.5;cursor: wait;}
+		}
+		p.error{color:#f00;margin:0;}
+	}
+}

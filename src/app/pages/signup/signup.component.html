@@ -1,0 +1,52 @@
+<main-header></main-header>
+<div class="container signupinpages">
+	<div class="row">
+		<div class="col-md-6 singupleft">
+			<h2>Intelligent device tracking app for<br/> Loved ones.</h2>
+			<img src="{{IMG_PREFIX}}contact.png" alt="Sign in">
+		</div>
+		<div class="col-md-6">
+			<div class="signup_header">
+				<div class="signLinks">
+					<a routerLink="/signin" className="signinLink" routerLinkActive="active" title="Sign in">Sign in</a>
+					<a routerLink="/signup" className="signupLink" routerLinkActive="active" title="Sign up">Sign up</a>
+				</div>
+			</div>
+			<div class="container contactform" > 
+			 <form [formGroup]="signupform" (ngSubmit)="onSubmit()" novalidate>			 	
+			 	<div class="row">
+			 		<div class="col-md-12">
+						<input id="user-name" type="text" required formControlName="name"  placeholder="User Name">
+						<p class="error" *ngIf="signupform.touched && signupform.controls['name'].invalid"> 
+					      {{ getError('name', 'name') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+					    <input type="email" formControlName="emailId" id="emailId" required placeholder="Email" />
+					    <p class="error" *ngIf="signupform.touched && signupform.controls['emailId'].invalid"> 
+					      {{ getError('emailId', 'emailId') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+					    <input type="password" formControlName="password" id="Password" required placeholder="Password" />
+					    <p class="error" *ngIf="signupform.touched && signupform.controls['password'].invalid"> 
+					      {{ getError('password', 'password') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	
+			 	
+			 	<div class="row">
+			 		<div class="col-md-12">
+				 		  <button type="submit" [disabled]="!signupform.valid">Sign up</button>
+					</div>
+			 	</div>			  
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

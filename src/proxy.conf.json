@@ -1,0 +1,18 @@
+{
+  "/posts": {
+    "target": "http://54.205.237.196:8507/api/v1/",
+    "secure": false,
+    "pathRewrite": {
+    "^/posts": ""
+  },
+    "changeOrigin": true
+  },
+  "/gets": {
+    "target": "http://54.205.237.196:8507/api/v1/",
+    "secure": false,
+    "pathRewrite": {
+    "^/gets": ""
+  },
+    "changeOrigin": true
+  }
+}

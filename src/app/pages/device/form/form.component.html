@@ -1,0 +1,58 @@
+<main-header></main-header>
+<div class="container">
+	<div class="row justify-content-md-center">
+		<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="row deviceList">
+					<div class="col-md-12">
+						
+						
+						 <form [formGroup]="deviceform" (ngSubmit)="onSubmit()" novalidate>	
+						 <div class="device-header ">
+							<h2>Add Device</h2>
+							<div class="switch"><p>Account Holder</p>
+							  <label>
+							    <input type="checkbox" formControlName="accountHolder" [(ngModel)]="accountHolder" >
+							    <span class="slider round"></span>
+							  </label>
+							</div>
+							
+							<p *ngIf="accountHolder" class="accountholder">The device will be added under account holder</p>
+						</div>		
+						<div class="deviceFrom"> 
+			 			<div class="row">
+			 		<div class="col-md-12">
+						<input id="deviceName" type="text" required formControlName="deviceName"  placeholder="Device name">
+						<p class="error" *ngIf="deviceform.touched && deviceform.controls['deviceName'].invalid"> 
+					      {{ getError('deviceName', 'deviceName') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-md-12">
+					    <input type="text" formControlName="deviceUniqueNumber" id="deviceUniqueNumber" required placeholder="Device unique number" />
+					    <p class="error" *ngIf="deviceform.touched && deviceform.controls['deviceUniqueNumber'].invalid"> 
+					      {{ getError('deviceUniqueNumber', 'deviceUniqueNumber') }} 
+					    </p>
+					</div>
+			 	</div>
+			 	
+			 	
+			 	<div class="row">
+			 			<div class="col-md-6">
+			 				
+			 			</div>
+			 		<div class="col-md-6">
+				 		  <button type="submit" class="float-right" [disabled]="!deviceform.valid">Save Device</button>
+					</div>
+			 	</div>		
+			 		</div>	  
+			</form>
+	
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

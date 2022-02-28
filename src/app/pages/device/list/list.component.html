@@ -1,0 +1,73 @@
+<main-header></main-header>
+<div class="container">
+	<div class="row justify-content-md-center">
+		<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-12"></div>
+				</div>
+				<div class="row deviceList">
+					<div class="col-md-12">
+						<div class="device-header">
+							<h2>Device list</h2>
+							<a routerLink="add-device">Add device</a>
+							<a routerLink="edit-device">Edit device</a>
+						</div>
+						<div class="deviceMainList">
+							<ng-container *ngFor="let device of deviceDataSet.data.devices; let i = index">
+							 	<div class="row" *ngIf="device.accountHolder">
+							 		<div class="col-md-3">
+							 			<span>Account holder</span>
+							 			<strong>{{device.userDetails.name}}</strong>
+							 		</div>
+							 		<div class="col-md-4">
+							 			<span>Device ID</span>
+							 			<strong>{{device.deviceUniqueNumber}}</strong>							 		
+							 		</div>
+							 		<div class="col-md-3">
+							 			<span>&nbsp;</span>
+							 			<strong class="color-red">Home, School, Gym</strong>
+							 		</div>
+							 		<div class="col-md-2">
+							 			<span>&nbsp;</span>
+							 			<ul>
+							 				<li><a class="delete-icon" href="#" title="delete"></a></li>
+							 				<li><a class="edit-icon" href="#" title="Edit"></a></li>
+							 				<li><a class="view-icon" href="#" title="View"></a></li>
+							 			</ul>
+
+							 		</div>
+							 	</div>	
+							 </ng-container>
+							 	<div class="row">
+							 		<div class="col-md-12">
+							 			<span>Other Devices</span>
+							 		</div>
+							 	</div>
+							 <div *ngFor="let device of deviceDataSet.data.devices; let i = index">
+							 	<div class="row" *ngIf="!device.accountHolder && device.status == 'A' ">
+							 		<div class="col-md-3">							 			
+							 			<strong>{{device.deviceName}}</strong>
+							 		</div>
+							 		<div class="col-md-4">							 			
+							 			<strong>{{device.deviceUniqueNumber}}</strong>	
+							 		</div>
+							 		<div class="col-md-3">
+							 			<strong class="color-red">Home, School, Gym</strong>
+							 		</div>
+							 		<div class="col-md-2">
+							 			<ul>
+							 				<li><a class="delete-icon" title="Delete" (click)="deleteDevice(device)" title="delete"></a></li>
+							 				<li><a class="edit-icon" title="Edit" (click)="editDevice(device)" title="Edit"></a></li>
+							 				<li><a class="view-icon" title="View" href="#" title="View"></a></li>
+							 			</ul>
+							 		<device-action  [action]="'edit'" [device]="device">Loading</device-action> 
+
+							 		</div>
+							 	</div>						     						       
+						      </div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>

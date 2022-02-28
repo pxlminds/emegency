@@ -1,0 +1,17 @@
+header{
+	.main-logo *{font-family: Roboto}
+	padding:20px 0;
+	.nav-item{
+	margin-left:20px;
+	a{
+		font-size:16px;
+		color: #000000;
+		cursor: pointer;
+		&:hover{
+		color:#F2191A;
+		text-decoration:none;
+		}
+		&.active{color:#F2191A;}
+	}
+	} 
+}

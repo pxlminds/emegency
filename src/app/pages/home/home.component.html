@@ -1,0 +1,48 @@
+<main-header></main-header>
+<div class="container home-banner-container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="home-banner-content">
+				<h2>Hello!</h2>
+				<h3>Welcome to On emergency tracking application.</h3>
+				<p>GPS tracking mobile app converts your Android, iOS, or Windows device into a GPS tracking device. Installing this app to devices that you want to track, you can monitor their whereabouts on this web site.</p>
+				<ng-container *ngIf="!authService.isLoggedIn()">
+					<h4>Do you like to try this app?</h4>
+					<a routerLink="signup" title="Sign up" >Sign up</a>
+				</ng-container>
+				<ng-container *ngIf="authService.isLoggedIn()">
+					<h4>Manage your device here</h4>
+					<a routerLink="device" title="Device" >Device</a>
+				</ng-container>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<img src="{{IMG_PREFIX}}home-banner.svg" alt="Home Banner">
+		</div>
+	</div>
+</div>
+<div class="container home-banner-btm-container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="home_btm_cnt text-center">
+				<h2>Unlimited devices</h2>
+				<span><img src="{{IMG_PREFIX}}endless.png" alt="Unlimited devices"></span>
+				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="home_btm_cnt text-center">
+				<h2>Track easy</h2>
+				<span><img src="{{IMG_PREFIX}}track.png" alt="Track easy"></span>
+				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="home_btm_cnt text-center">
+				<h2>Manage anywhere</h2>
+				<span><img src="{{IMG_PREFIX}}settings.png" alt="Manage anywhere"></span>
+				<p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+			</div>
+		</div>
+	</div>
+</div>
